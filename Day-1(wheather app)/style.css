@@ -1,0 +1,99 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+.card{
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 30vw;
+    background-color: white;
+    border-radius:9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.search{
+    /* padding: 0 15px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3vw;
+}
+.search input{
+    border: 0;
+    outline: 0;
+    border-radius: 200px;
+    padding: 8px;
+    margin: 20px 0;
+    font-size: 15px;
+    color: black;
+}
+.search button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.wheather{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.whethermain{
+    display: none;
+}
+.error{
+    text-align: left;
+    display: none;
+}
+
+.wheather img{
+    width: 110px;
+}
+.wheather h1{
+    font-size: 70px;
+    font-weight: 600;
+}
+.wheather h2{
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: 500;
+}
+.details{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3vw;
+    margin-bottom: 40px;
+}
+.left,.right{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 0.7vw;
+    margin-bottom: 40px;
+}
+.col img{
+    width: 40px;
+}   

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wheather app</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="main">
+        <div class="card">
+            <div class="search">
+                <input type="text" placeholder="Enter your city Name" spellcheck="false">
+                <button><i class="fa-solid fa-magnifying-glass btnsearch"></i></button>
+            </div>
+            <div class="error">
+                <p>Invalid cityname</p>
+            </div>
+            <div class="whethermain">
+                <div class="wheather" id="wheather">
+                    <img src="https://cdn.search.brave.com/serp/v2/_app/immutable/assets/02d.DERIh0Wo.svg" alt="">
+                    <h1 class="temp">22'c</h1>
+                    <h2 class="city">New York</h2>
+                    <div class="details">
+                        <div class="left">
+                            <div class="col">
+                                <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/humid-2363149-1972029.png?f=webp&w=512" alt="">
+                            </div>
+                            <div>
+                                <p class="humidity">50%</p>
+                                <p>humidity</p>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="col">
+                                <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/wind-10964159-9126243.png?f=webp&w=512" alt="">
+                            </div>
+                            <div>
+                                <p class="wind">20km/hr</p>
+                                <p>windspeed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
