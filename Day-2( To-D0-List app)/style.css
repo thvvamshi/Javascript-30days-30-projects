@@ -1,0 +1,87 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    padding: 10px;
+}
+.todo{
+    padding-top: 20px;
+    min-height: 60vh;
+    width: 35vw;
+    background-color: white;
+    border-radius: 7px;
+    margin: 100px auto 20px;
+}
+.todo h2{
+    padding-left: 20px;
+}
+.todo img{
+    width: 25px;
+}
+.row{
+    margin: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vh;
+}
+.row input{
+    height: 30px;
+    outline: none;
+    border: none;
+    flex: 1;
+}
+.row button{
+    height: 30px;
+    width: 80px;
+    background-color: rgb(212, 212, 130);
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+ul li{
+    padding-left: 40px;
+    list-style: none;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    margin: 10px;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 20px;  
+    width: 20px;
+    border-radius: 50%;
+    background: url(https://cdn-icons-png.flaticon.com/128/15476/15476717.png);
+    background-position: center;
+    background-size: cover;
+    top: 2px;
+    left: 8px;
+}
+ul li.checked{
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background: url(https://cdn-icons-png.flaticon.com/128/14090/14090371.png);
+    width:20px;
+    background-position: center;
+    background-size: cover;
+}
+ul li span{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    font-size: 22px;
+    cursor: pointer;
+    right: 0;
+    top: 5px;
+    border-radius: 50%;
+}
