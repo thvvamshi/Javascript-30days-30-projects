@@ -5,7 +5,7 @@ const searchImages = document.querySelector(".searchImages"); // Div where image
 const showmore = document.querySelector(".showmore"); // "Show More" button to load more images
 
 // Your Unsplash API key
-const apikey = `K9SkLHNf6SyFpgd5V-5YnbrRoSiXOWcRVejINdxNN0o`; // Replace with your actual API key
+const apikey = `...`; // Replace with your actual API key
 
 // Initialize keyword and page variables
 let keyword = ""; // Store the search keyword
