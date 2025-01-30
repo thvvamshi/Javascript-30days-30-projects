@@ -1,41 +1,63 @@
+// Select the .message div where the new content will be added
 let message = document.querySelector(".message");
 let btn = document.querySelector(".btn");
+
+// Select all paragraphs (.para) within the document
 let para = document.querySelectorAll(".para");
 
-// click event and create the p & img tags and append in message div
-btn.addEventListener("click",()=>{
+// Add an event listener to the button to create a new paragraph and image on click
+btn.addEventListener("click", () => {
+    // Create a new <p> element to hold the new content
     let parabox = document.createElement("p");
-    parabox.className ="para";
+
+    // Set the class name for the new paragraph element as "para"
+    parabox.className = "para";
+
+    // Create a new <img> element to add an image to the paragraph
     let img = document.createElement("img");
-    parabox.setAttribute("contenteditable" ,"true");
-    img.src ="https://cdn-icons-png.flaticon.com/128/1617/1617543.png";
+
+    // Set the "contenteditable" attribute to "true" so the paragraph text can be edited
+    parabox.setAttribute("contenteditable", "true");
+
+    // Set the source URL for the image inside the paragraph
+    img.src = "https://cdn-icons-png.flaticon.com/128/1617/1617543.png";
+
+    // Append the paragraph element to the message div, and then append the image to the paragraph
     message.appendChild(parabox).appendChild(img);
 });
 
-message.addEventListener("click",(e)=>{
-    //condition when tagName === img then remove the parentElement
-    if(e.target.tagName === "IMG"){
-        e.target.parentElement.remove();
-        savedata();
-        // condition for tagName === p then save the data in localstorage
-    }else if(e.target.tagName === "P"){
+// Add an event listener to the message div to handle clicks within it
+message.addEventListener("click", (e) => {
+    // If the clicked element is an <img> tag, remove its parent (the <p> tag)
+    if (e.target.tagName === "IMG") {
+        e.target.parentElement.remove();  // Remove the parent <p> that contains the <img>
+        savedata();  // Save the updated content in localStorage
+
+    // If the clicked element is a <p> tag, set up a listener for the 'keyup' event to save changes
+    } else if (e.target.tagName === "P") {
+        // Re-select all the paragraph elements in the document
         para = document.querySelectorAll(".para");
-        // here forEach method travels through every parsent Element & save the data
-        para.forEach(note =>{
-            note.onkeyup = function(){
-                savedata(); 
+
+        // Use forEach to loop through each paragraph element and attach a keyup event listener
+        para.forEach(note => {
+            note.onkeyup = function() {
+                savedata();  // Save the updated content to localStorage whenever the user types
             }
         });
     }
 });
 
-// this function for storing the data in localdevice
-function savedata(){
+// Function to save the current content of the message div into localStorage
+function savedata() {
+    // Store the innerHTML of the message div (which includes all paragraphs and images) in localStorage
     localStorage.setItem("para", message.innerHTML);
 }
-// this function for display the data that stored in localdevice
-function getdata(){
+
+// Function to retrieve the stored content from localStorage and display it on page load
+function getdata() {
+    // Set the innerHTML of the message div to the stored content from localStorage
     message.innerHTML = localStorage.getItem("para");
 }
-// function call for display the data
+
+// Call getdata to display any previously saved content when the page loads
 getdata();
